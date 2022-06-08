@@ -1,5 +1,6 @@
 ﻿using Employees.Context;
 using Employees.Model;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Employees.Repos
@@ -19,6 +20,5 @@ namespace Employees.Repos
         {
             return _employeesContext.Posts.Where(w => w.Id == id).FirstOrDefault();
         }
-
     }
 }
