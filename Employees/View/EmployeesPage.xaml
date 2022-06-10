@@ -9,44 +9,30 @@
       Title="EmployeesPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" Name="EmployeesViewModel" SelectionChanged="EmployeesViewModel_SelectionChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Content="Создать" Width="100" Margin="5" Click="CreateEmployee"/>
+            <Button Name="EditButton" IsEnabled="False" Content="Изменить" Width="100" Margin="5" Click="EditEmployee"/>
+            <Button Name="DeleteButton" IsEnabled="False" Content="Удалить" Width="100" Margin="5" Click="DeleteEmployee"/>
+            <ComboBox Margin="5" DisplayMemberPath="PostName" Name="PostFilterComboBox" Width="150" Height="25" SelectionChanged="FilterComboBox_SelectionChanged"/>
+            <ComboBox Margin="5" DisplayMemberPath="SubdivisionName" Name="SubdivisionsFilterComboBox" Width="150" Height="25" SelectionChanged="FilterComboBox_SelectionChanged"/>
+            <Button Content="Очистить фильтр" Height="25" Margin="5" Click="ClearFilter"/>
+        </StackPanel>
+        <ListView Grid.Row="1" Name="EmployeesViewModel" SelectionChanged="EmployeesViewModel_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Фамилия" Width="auto" DisplayMemberBinding="{Binding Surname}"/>
-                        <GridViewColumn Header="Имя" Width="auto" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Отчество" Width="auto" DisplayMemberBinding="{Binding Patronymic}"/>
+                        <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding Surname}"/>
+                        <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding Patronymic}"/>
+                        <GridViewColumn Header="Должность" Width="150" DisplayMemberBinding="{Binding Post.PostName}"/>
+                        <GridViewColumn Header="Отдел" Width="150" DisplayMemberBinding="{Binding Subdivision.SubdivisionName}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="Фамилия" Grid.Row="0"/>
-            <TextBox Name="SurnameTextBox" Grid.Row="1"/>
-            <TextBlock Text="Имя" Grid.Row="2"/>
-            <TextBox Name="NameTextBox" Grid.Row="3"/>
-            <TextBlock Text="Отчество" Grid.Row="4"/>
-            <TextBox Name="PatronymicTextBox" Grid.Row="5"/>
-            <ComboBox Name="PostsComboBox" Grid.Row="6" DisplayMemberPath="PostName"/>
-            <StackPanel Grid.Row="7" Orientation="Horizontal">
-                <Button Content="Добавить" Width="100" Margin="5" Click="CreateEmployee"/>
-                <Button Content="Изменить" Width="100" Margin="5"/>
-                <Button Content="Удалить" Width="100" Margin="5"/>
-            </StackPanel>
-        </Grid>
     </Grid>
 </Page>

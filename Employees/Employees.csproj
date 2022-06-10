@@ -44,6 +44,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.0.2\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -65,14 +68,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EmployeeValidation.cs" />
     <Compile Include="Helper.cs" />
-    <Compile Include="Migrations\202206081039533_alterTableEmployees.cs" />
-    <Compile Include="Migrations\202206081039533_alterTableEmployees.designer.cs">
-      <DependentUpon>202206081039533_alterTableEmployees.cs</DependentUpon>
+    <Compile Include="Migrations\202206081604535_create.cs" />
+    <Compile Include="Migrations\202206081604535_create.designer.cs">
+      <DependentUpon>202206081604535_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101238224_alterTablePost.cs" />
+    <Compile Include="Migrations\202206101238224_alterTablePost.designer.cs">
+      <DependentUpon>202206101238224_alterTablePost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101305468_alterTablePost2.cs" />
+    <Compile Include="Migrations\202206101305468_alterTablePost2.designer.cs">
+      <DependentUpon>202206101305468_alterTablePost2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101312375_alterTablePost3.cs" />
+    <Compile Include="Migrations\202206101312375_alterTablePost3.designer.cs">
+      <DependentUpon>202206101312375_alterTablePost3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repos\EmployeeRepo.cs" />
-    <Compile Include="Repos\PostRepo.cs" />
+    <Compile Include="View\CreateEmployeeWindow.xaml.cs">
+      <DependentUpon>CreateEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditEmployeeWindow.xaml.cs">
+      <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeesPage.xaml.cs">
       <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +109,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CreateEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EmployeesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,13 +139,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202206081039533_alterTableEmployees.resx">
-      <DependentUpon>202206081039533_alterTableEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206081604535_create.resx">
+      <DependentUpon>202206081604535_create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101238224_alterTablePost.resx">
+      <DependentUpon>202206101238224_alterTablePost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101305468_alterTablePost2.resx">
+      <DependentUpon>202206101305468_alterTablePost2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101312375_alterTablePost3.resx">
+      <DependentUpon>202206101312375_alterTablePost3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
