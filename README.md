@@ -1,6 +1,8 @@
 # Employees
 
 Проект создан на WPF .NET Framework 4.7.2. Для хранения данных был выбран SQL Server.
+
+
 Чтобы запустить программу, нужно создать базу данных (я использовал Microsoft SQL Server Management Studio). 
 В файле App.config нужно добавить строку подключения:
 <connectionStrings>
