@@ -7,7 +7,7 @@
 
 ```
 <connectionStrings>
-		<add name="EmployeesConnection" connectionString="Data Source="здесь название базы данных, которую вы создали";Initial Catalog=gr691_mnm;Integrated Security=True;" providerName="System.Data.SqlClient" />
+		<add name="EmployeesConnection" connectionString="Data Source="название сервера";Initial Catalog="название БД";Integrated Security=True;" providerName="System.Data.SqlClient" />
 </connectionStrings>
 ```
 
