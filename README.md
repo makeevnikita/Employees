@@ -5,9 +5,11 @@
 Чтобы запустить программу, нужно создать базу данных (я использовал Microsoft SQL Server Management Studio). 
 В файле App.config нужно добавить строку подключения:
 
+```
 <connectionStrings>
 		<add name="EmployeesConnection" connectionString="Data Source="здесь название базы данных, которую вы создали";Initial Catalog=gr691_mnm;Integrated Security=True;" providerName="System.Data.SqlClient" />
 </connectionStrings>
+```
 
 Также нужно установить EntityFramework для работы с БД и FluentValidation для валидации
 
